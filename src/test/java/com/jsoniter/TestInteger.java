@@ -19,7 +19,7 @@ public class TestInteger extends TestCase {
 
     private boolean isStreaming;
 
-    public void test_char() throws IOException {
+    public void test_char() {
         Character c = JsonIterator.deserialize("50", Character.class);
         assertEquals(50, (int) c);
     }
