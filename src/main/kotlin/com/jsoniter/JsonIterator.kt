@@ -373,23 +373,23 @@ class JsonIterator : Closeable {
             for (i in valueTypes.indices) {
                 valueTypes[i] = ValueType.INVALID
             }
-            valueTypes['"'] = ValueType.STRING
-            valueTypes['-'] = ValueType.NUMBER
-            valueTypes['0'] = ValueType.NUMBER
-            valueTypes['1'] = ValueType.NUMBER
-            valueTypes['2'] = ValueType.NUMBER
-            valueTypes['3'] = ValueType.NUMBER
-            valueTypes['4'] = ValueType.NUMBER
-            valueTypes['5'] = ValueType.NUMBER
-            valueTypes['6'] = ValueType.NUMBER
-            valueTypes['7'] = ValueType.NUMBER
-            valueTypes['8'] = ValueType.NUMBER
-            valueTypes['9'] = ValueType.NUMBER
-            valueTypes['t'] = ValueType.BOOLEAN
-            valueTypes['f'] = ValueType.BOOLEAN
-            valueTypes['n'] = ValueType.NULL
-            valueTypes['['] = ValueType.ARRAY
-            valueTypes['{'] = ValueType.OBJECT
+            valueTypes['"'.toInt()] = ValueType.STRING
+            valueTypes['-'.toInt()] = ValueType.NUMBER
+            valueTypes['0'.toInt()] = ValueType.NUMBER
+            valueTypes['1'.toInt()] = ValueType.NUMBER
+            valueTypes['2'.toInt()] = ValueType.NUMBER
+            valueTypes['3'.toInt()] = ValueType.NUMBER
+            valueTypes['4'.toInt()] = ValueType.NUMBER
+            valueTypes['5'.toInt()] = ValueType.NUMBER
+            valueTypes['6'.toInt()] = ValueType.NUMBER
+            valueTypes['7'.toInt()] = ValueType.NUMBER
+            valueTypes['8'.toInt()] = ValueType.NUMBER
+            valueTypes['9'.toInt()] = ValueType.NUMBER
+            valueTypes['t'.toInt()] = ValueType.BOOLEAN
+            valueTypes['f'.toInt()] = ValueType.BOOLEAN
+            valueTypes['n'.toInt()] = ValueType.NULL
+            valueTypes['['.toInt()] = ValueType.ARRAY
+            valueTypes['{'.toInt()] = ValueType.OBJECT
         }
 
         fun parse(`in`: InputStream, bufSize: Int): JsonIterator {
