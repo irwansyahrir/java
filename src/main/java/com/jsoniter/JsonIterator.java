@@ -1,3 +1,4 @@
+/*
 package com.jsoniter;
 
 import com.jsoniter.any.Any;
@@ -326,14 +327,16 @@ public class JsonIterator implements Closeable {
         }
     }
 
-    /**
+    */
+/**
      * try to bind to existing object, returned object might not the same instance
      *
      * @param existingObject the object instance to reuse
      * @param <T>            object type
      * @return data binding result, might not be the same object
      * @throws IOException if I/O went wrong
-     */
+     *//*
+
     public final <T> T read(T existingObject) throws IOException {
         try {
             this.existingObject = existingObject;
@@ -352,7 +355,8 @@ public class JsonIterator implements Closeable {
         return configCache;
     }
 
-    /**
+    */
+/**
      * try to bind to existing object, returned object might not the same instance
      *
      * @param typeLiteral    the type object
@@ -360,7 +364,8 @@ public class JsonIterator implements Closeable {
      * @param <T>            object type
      * @return data binding result, might not be the same object
      * @throws IOException if I/O went wrong
-     */
+     *//*
+
     public final <T> T read(TypeLiteral<T> typeLiteral, T existingObject) throws IOException {
         try {
             this.existingObject = existingObject;
@@ -551,3 +556,4 @@ public class JsonIterator implements Closeable {
         }
     }
 }
+*/

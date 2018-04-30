@@ -12,14 +12,28 @@ import java.math.BigInteger
 import java.util.ArrayList
 import java.util.HashMap
 
-class JsonIteratorKt private constructor(internal var `in`: InputStream?, internal var buf: ByteArray, internal var head: Int, internal var tail: Int) : Closeable {
+class JsonIterator : Closeable {
+
+    internal var `in`: InputStream? // TODO: backtics, https://kotlinlang.org/docs/reference/java-interop.html#escaping-for-java-identifiers-that-are-keywords-in-kotlin
+    internal var buf: ByteArray
+    internal var head: Int
+    internal var tail: Int
+
+    private constructor(`in`: InputStream?, buf: ByteArray, head: Int, tail: Int) {
+        this.`in` = `in`
+        this.buf = buf
+        this.head = head
+        this.tail = tail
+        this.reusableSlice = Slice(null, 0, 0)
+        this.reusableChars = CharArray(32)
+    }
 
     var configCache: Config? = null
     internal var skipStartedAt = -1 // skip should keep bytes starting at this pos
 
     internal var tempObjects: Map<String, Any>? = null // used in reflection object decoder
-    internal val reusableSlice = Slice(null, 0, 0)
-    internal var reusableChars = CharArray(32)
+    internal val reusableSlice: Slice
+    internal var reusableChars: CharArray
     internal var existingObject: Any? = null // the object should be bind to next
 
     constructor() : this(null, ByteArray(0), 0, 0) {}
